@@ -78,11 +78,11 @@ context.appendCloud({
 
 <img width="903" alt="canvas_cloud_cpc" src="https://cloud.githubusercontent.com/assets/3869766/9648103/3d72bc94-5199-11e5-8075-708c4d586e87.png">
 
-# Ratio Circle on Y axis `ratio_circles_y`
+### Ratio Circle on Y axis `ratio_circles_y`
 
 <img width="886" alt="canvas_cloud_ratio_c_y" src="https://cloud.githubusercontent.com/assets/3869766/9648107/477c867a-5199-11e5-9dbb-b6581a7e1211.png">
 
-# Position `position`
+### Position `position`
 
 <img width="426" alt="canvas_cloud_position" src="https://cloud.githubusercontent.com/assets/3869766/9648109/49bffbf6-5199-11e5-8099-77aca752143f.png">
 
