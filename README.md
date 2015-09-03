@@ -1,6 +1,6 @@
 # Canvas appendCloud
 
-Programmatically draw clouds using HTML5 Canvas
+Procedural Cloud generation using HTML5 Canvas
 
 ## Getting Started
 
