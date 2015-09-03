@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Canvas Clouds</title>
+    <script type="text/javascript" src="canvas.appendCloud.js"></script>
+<style media="screen">
+  body{
+    padding:10px;
+    background-color: #fff;
+}
+</style>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+    var global_canvas = document.createElement("canvas");
+    var global_context = global_canvas.getContext("2d");
+    document.body.appendChild(global_canvas);
+
+    global_canvas.width = window.innerWidth;
+    global_canvas.height = window.innerHeight;
+
+    var radius = 60;
+    var debug = false; // Switch to true to to see the cloud area and centroid
+
+    // Color
+    for(var i = 0;  i < 11 ; i++){
+      global_context.appendCloud(
+        {
+          gray: (255-25*i),
+          line1: i,
+          line2: "gray: " + (255-25*i),
+          position:[radius + i*(radius*2 + 0), radius ],
+          radius: radius,
+          debug: debug
+        }
+      );
+    }
+
+    // Gray delta for gray:128
+    for(var i = 0;  i < 11 ; i++){
+      global_context.appendCloud(
+        {
+          gray_delta: (10*i),
+          line1: i,
+          line2: "gray_delta: " + (10*i),
+          position:[radius + i*(radius*2 + 0), radius + (2*radius + 0) * 1 ],
+          radius: radius,
+          debug: debug
+        }
+      );
+    }
+
+    // Circle Per Cloud
+    for(var i = 1;  i < 12 ; i++){
+      global_context.appendCloud(
+        {
+          circles_per_cloud: 5*i,
+          radius: radius,
+          line1: i-1,
+          line2: "cpc: " + (5*i),
+          position:[radius + (i-1)*(radius*2 + 0), radius + (2*radius + 0) * 2 ],
+          debug: debug
+        }
+      );
+    }
+
+    // ratio_circles_y
+    for(var i = 0;  i < 11 ; i++){
+      global_context.appendCloud(
+        {
+          radius: radius,
+          line1: i,
+          line2: "ratio_c_y: " + Math.floor(0.1*i*10)/10,
+          ratio_circles_y: 0.1*i,
+          position:[radius + i*(radius*2 + 0), radius + (2*radius + 0) * 3 ],
+          debug: debug
+        }
+      );
+    }
+
+    global_context.appendCloud(
+      {
+        radius: radius,
+        gray: 128,
+        line1: "3 Positions Cloud",
+        position: [
+          [radius + 20, radius*10],
+          [radius + 40, radius*10 + radius],
+          [radius + 60, radius*10 + 20],
+        ],
+        debug: debug
+      }
+    );
+
+    global_context.appendCloud(
+      {
+        radius: radius,
+        line1: "6 Positions Cloud",
+        position: [
+          [radius*6 , radius*10],
+          [radius*6 + radius*0.9*1, radius*10],
+          [radius*6 + radius*0.9*0.5, radius*10 + radius *0.9],
+          [radius*6 + radius*0.9*2, radius*10],
+          [radius*6 + radius*0.9*3, radius*10],
+          [radius*6 + radius*0.9*4, radius*10],
+        ],
+        debug: debug
+      }
+    );
+
+
+
+    </script>
+</body>
+</html>
